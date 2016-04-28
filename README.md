@@ -8,9 +8,9 @@ ParticleLib contains over 10 different pre-made particle animations that you are
 
 | Name        | Class         |  Update Frequency | ParticleStyleType | Image  |
 | ----------- | ------------- | ----------------- | ----------------- | ------ |
-| Swirl       | ParticleSwirl | 4                 | STATIC           |![alttext](https://github.com/moppletop/AnimationCollection/tree/master/images/swirl.png "Swirl")        |
-| Blood Helix | ParticleHelix | 1                 | PLAYER_ORIENTATED |        |
-| Flame Wheel | ParticleFlame | 1                 | PLAYER_ORIENTATED |        |
+| Swirl       | ParticleSwirl | 4                 | STATIC           |![alttext](https://github.com/moppletop/AnimationCollection/blob/master/images/swirl.png "Swirl")        |
+| Blood Helix | ParticleHelix | 1                 | PLAYER_ORIENTATED |![alttext](https://github.com/moppletop/AnimationCollection/blob/master/images/helix.png "Helix")        |
+| Flame Wheel | ParticleFlame | 1                 | PLAYER_ORIENTATED |![alttext](https://github.com/moppletop/AnimationCollection/blob/master/images/flame.png "Flame")        |
 
 ### Command usage
 If you would like to see these particles in a live environment you can download a compiled version of this library here. Just use this command.
