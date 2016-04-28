@@ -14,9 +14,10 @@ public class Main extends JavaPlugin {
 
 	/**
 	 * @author Sam
-	 * @see https://github.com/moppletop/AnimationCollection 
-	 * 
-	 * Created as a VERY SIMPLE plugin to see all the animations available to you.
+	 * @see https://github.com/moppletop/AnimationCollection
+	 *
+	 *      Created as a VERY SIMPLE plugin to see all the animations available
+	 *      to you.
 	 */
 
 	private ParticleManager particleManager;
@@ -36,6 +37,7 @@ public class Main extends JavaPlugin {
 					try {
 						Class<?> clazz = Class.forName(packageName + ".Particle" + args[0]);
 						Particle particle = (Particle) clazz.getConstructor(ParticleManager.class, int.class).newInstance(particleManager, 1);
+						particle.setParticleStyleType(ParticleStyleType.PLAYER_ORIENTATED);
 						if (particle.getParticleStyleType() == ParticleStyleType.PLAYER_ORIENTATED) {
 							particle.setTarget(player);
 						} else {
@@ -43,7 +45,7 @@ public class Main extends JavaPlugin {
 						}
 						particle.start();
 					} catch (Exception e) {
-						player.sendMessage(ChatColor.RED + "That is not a particle. Check https://github.com/moppletop/ParticleLib");
+						player.sendMessage(ChatColor.RED + "That is not a particle. Check https://github.com/moppletop/AnimationCollection");
 						return true;
 					}
 				} else {
