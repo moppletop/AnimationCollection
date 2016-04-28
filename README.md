@@ -56,8 +56,62 @@ public class Main extends JavaPlugin {
 	ParticleHelix particleHelix = new ParticleHelix(getParticleManager(), 1); //You must pass in your instance of 
 	//ParticleManager and the frequency of the onUpdate() method. 
 	//Same way as if you were using a BukkitRunnable.
-	particleHelix.particleStyleType = ParticleStyleType.STATIC;
+	
+	particleHelix.iterations = 10 * 20; //This sets the number of iterations the onUpdate method will run.
+	//We multiply the number of seconds (10)
+	//by the number of iterations the animation makes every second (20).
+	
+	particleHelix.particleStyleType = ParticleStyleType.STATIC; //This means that the centre location of the 
+	//animation will remain at the same x, y and z. 
+	
 	particleHelix.loc = myCustomLocation;
+	
 	particleHelix.start();
 
 ```
+
+However, say if you wanted the animation to follow a player as they move around. This is also possible with the following code.
+
+``` java
+
+	ParticleHelix particleHelix = new ParticleHelix(particleManager, 1); //You must pass in your instance of 
+	//ParticleManager and the frequency of the onUpdate() method. 
+	//Same way as if you were using a BukkitRunnable.
+	
+	particleHelix.iterations = 10 * 20; //This sets the number of iterations the onUpdate method will run.
+	//We multiply the number of seconds (10)
+	//by the number of iterations the animation makes every second (20).
+	
+	particleHelix.particleStyleType = ParticleStyleType.PLAYER_ORIENTATED; 
+	
+	particleHelix.setTarget(player); //You can either pass in a Player or an UUID.
+	
+	particleHelix.start();
+
+```
+
+Finally you can also stop a particle early by using ```particleHelix.stop();```.
+
+## Custom Animations
+Now that you have a grasp on how to use pre-made animations, lets make some of our own.
+
+**Step One** is to create our class and setup the constructor. You can do this like so.
+
+``` java
+
+import io.github.moppletop.particlelib.api.Particle;
+import io.github.moppletop.particlelib.api.ParticleManager;
+
+public class ParticleExample extends Particle {
+
+	public ParticleExample(ParticleManager particleManager, int frequency) {
+		super(particleManager, frequency);
+	}
+
+}
+
+```
+
+**Step Two** is to write the logic for our particle. This is where your maths skills will be requrired
+
+> As a side note this is something which I cannot teach you in such a short time, I would recommend reading up on circle and co-ordinate geometry including radian measurements. If you are studying A-Level Mathematics (UK) you will learn about these topics and be able to apply it here. It is also a good idea to have a "play" around with the existing animations and see if you can make anything cool.
