@@ -1,5 +1,5 @@
-# ParticleLib
-A simple particle library for developers to build their own particles animations and learn from pre-made ones. Credit to DarkBlade12 for the ParticleEffect and ReflectionUtils classes.
+# Animation Collection
+A simple particle animation collection for developers to build their own particles animations and learn from pre-made ones. Credit to DarkBlade12 for the ParticleEffect and ReflectionUtils classes.
 
 ## Premade Animations
 
