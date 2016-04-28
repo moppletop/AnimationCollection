@@ -40,7 +40,7 @@ public class Main extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		particleManager = new ParticleManager(this); //You must pass in your instance of your plugin.
+		particleManager = new ParticleManager(this); //You must pass in the instance of your plugin.
 	}
 	
 	public ParticleManager getParticleManager() {
@@ -57,14 +57,14 @@ public class Main extends JavaPlugin {
 	ParticleHelix particleHelix = new ParticleHelix(getParticleManager(), 1); 
 	//You must pass in your instance of ParticleManager and the frequency of the onUpdate() method. Same way as if you were using a BukkitRunnable.
 	
-	particleHelix.iterations = 10 * 20; 
+	particleHelix.setIterations(10 * 20); 
 	//This sets the number of iterations the onUpdate method will run.
 	//We multiply the number of seconds (10) by the number of iterations the animation makes every second (20).
 	
-	particleHelix.particleStyleType = ParticleStyleType.STATIC; 
+	particleHelix.setParticleStyleType(ParticleStyleType.STATIC); 
 	//This means that the centre location of the animation will remain at the same x, y and z. 
 	
-	particleHelix.loc = myCustomLocation;
+	particleHelix.setLocation(myCustomLoc);
 	
 	particleHelix.start();
 
@@ -78,11 +78,11 @@ However, say if you wanted the animation to follow a player as they move around.
 	//You must pass in your instance of ParticleManager and the frequency of the onUpdate() method. 
 	//Same way as if you were using a BukkitRunnable.
 	
-	particleHelix.iterations = 10 * 20; 
+	particleHelix.setIterations(10 * 20); 
 	//This sets the number of iterations the onUpdate method will run.
 	//We multiply the number of seconds (10) by the number of iterations the animation makes every second (20).
 	
-	particleHelix.particleStyleType = ParticleStyleType.PLAYER_ORIENTATED; 
+	particleHelix.setParticleStyleType(ParticleStyleTypePLAYER_ORIENTATED); 
 	
 	particleHelix.setTarget(player); //You can either pass in a Player or an UUID.
 	
@@ -92,7 +92,7 @@ However, say if you wanted the animation to follow a player as they move around.
 
 Finally you may want to be aware of some other uses of the particle class:
 * ```particle.stop()``` - Stops the particle.
-* ```autoTerminate``` - Setting this to false will mean that the particle will never stop.
+* ```particle.setAutoTerminating(boolean)``` - Setting this to false will mean that the particle will never stop.
 * When using ```ParticleStyleType.PLAYER_ORIENTATED``` if the target player leaves the server ```particle.stop()``` will be called automatically. 
 
 ### Custom Animations
@@ -143,13 +143,13 @@ public class ParticleExample extends Particle {
 			double x = r * Math.sin(t);
 			double z = r * Math.cos(t);
 
-			loc.add(x, 0, z);
+			getLocation().add(x, 0, z);
 			// Add to our location
 
-			ParticleEffect.FLAME.display(0, 0, 0, 0, 1, loc, 1000);
+			ParticleEffect.FLAME.display(0, 0, 0, 0, 1, getLocation(), 1000);
 			// Send our particle
 
-			loc.subtract(x, 0, z);
+			getLocation().subtract(x, 0, z);
 			// Always subtract the values you added to the location or remember
 			// to clone the location object every time you iterate.
 		}
@@ -187,8 +187,8 @@ public class Main extends JavaPlugin {
 			if (command.getName().equalsIgnoreCase("example")) { //Is the command /example?
 				if (player.hasPermission("particle.example")) { //Lets just check if they have a permission
 					ParticleExample particleExample = new ParticleExample(particleManager, 5); //Now setup our animation
-					particleExample.autoTerminate = false;
-					particleExample.particleStyleType = ParticleStyleType.PLAYER_ORIENTATED;
+					particleExample.setAutoTerminating(false);
+					particleExample.setParticleStyleType(ParticleStyleType.PLAYER_ORIENTATED);
 					particleExample.setTarget(player);
 					particleExample.start();
 				} else {
