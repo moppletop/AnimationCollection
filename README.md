@@ -53,16 +53,15 @@ public class Main extends JavaPlugin {
 
 ``` java
 
-	ParticleHelix particleHelix = new ParticleHelix(getParticleManager(), 1); //You must pass in your instance of 
-	//ParticleManager and the frequency of the onUpdate() method. 
-	//Same way as if you were using a BukkitRunnable.
+	ParticleHelix particleHelix = new ParticleHelix(getParticleManager(), 1); 
+	//You must pass in your instance of ParticleManager and the frequency of the onUpdate() method. Same way as if you were using a BukkitRunnable.
 	
-	particleHelix.iterations = 10 * 20; //This sets the number of iterations the onUpdate method will run.
-	//We multiply the number of seconds (10)
+	particleHelix.iterations = 10 * 20; 
+	//This sets the number of iterations the onUpdate method will run. We multiply the number of seconds (10)
 	//by the number of iterations the animation makes every second (20).
 	
-	particleHelix.particleStyleType = ParticleStyleType.STATIC; //This means that the centre location of the 
-	//animation will remain at the same x, y and z. 
+	particleHelix.particleStyleType = ParticleStyleType.STATIC; 
+	//This means that the centre location of the animation will remain at the same x, y and z. 
 	
 	particleHelix.loc = myCustomLocation;
 	
@@ -74,13 +73,13 @@ However, say if you wanted the animation to follow a player as they move around.
 
 ``` java
 
-	ParticleHelix particleHelix = new ParticleHelix(particleManager, 1); //You must pass in your instance of 
-	//ParticleManager and the frequency of the onUpdate() method. 
+	ParticleHelix particleHelix = new ParticleHelix(particleManager, 1); 
+	//You must pass in your instance of ParticleManager and the frequency of the onUpdate() method. 
 	//Same way as if you were using a BukkitRunnable.
 	
-	particleHelix.iterations = 10 * 20; //This sets the number of iterations the onUpdate method will run.
-	//We multiply the number of seconds (10)
-	//by the number of iterations the animation makes every second (20).
+	particleHelix.iterations = 10 * 20; 
+	//This sets the number of iterations the onUpdate method will run.
+	//We multiply the number of seconds (10) by the number of iterations the animation makes every second (20).
 	
 	particleHelix.particleStyleType = ParticleStyleType.PLAYER_ORIENTATED; 
 	
@@ -112,6 +111,12 @@ public class ParticleExample extends Particle {
 
 ```
 
-**Step Two** is to write the logic for our particle. This is where your maths skills will be requrired
+**Step Two** is to write the logic for our particle. This is where your maths skills will be reqiured
 
 > As a side note this is something which I cannot teach you in such a short time, I would recommend reading up on circle and co-ordinate geometry including radian measurements. If you are studying A-Level Mathematics (UK) you will learn about these topics and be able to apply it here. It is also a good idea to have a "play" around with the existing animations and see if you can make anything cool.
+
+``` java 
+
+
+
+```
