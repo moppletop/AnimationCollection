@@ -18,16 +18,18 @@ ParticleLib contains over 10 different pre-made particle animations that you are
 | Water Dragon | ParticleWaterDragon     | 1                 | PLAYER_ORIENTATED         |![alttext](https://github.com/moppletop/AnimationCollection/blob/master/images/waterdragon.png "Water Dragon")        |
 
 ### Command usage
-If you would like to see these particles in a live environment you can download a compiled version of this library [here](https://github.com/moppletop/AnimationCollection/blob/master/AnimatedCollection.jar?raw=true "Download pre-made jar"). Just use this command.
+If you would like to see these particles in a live environment you can download a compiled version of this library [here](https://github.com/moppletop/AnimationCollection/blob/master/AnimatedCollection.jar?raw=true "Download pre-made jar"). You can use the following command to do so.
 
 ```
 
-/particlelib <name>
+/particlelib <name> [frequency]
 
-Name being the class name without "Particle" infront of it.
-For example for the Blood Helix animation you would use
+<name> is the name of the particle's class without "Particle" infront of it.
+[frequency] is the frequency/period of the runnable, same as the period in a BukkitRunnable. It is an optional parameter.
 
-/particlelib Helix
+This is an example of the Helix particle with a frequency of 5:
+
+/particlelib Helix 5
 
 ```
 
@@ -35,7 +37,7 @@ For example for the Blood Helix animation you would use
 To use these particles in pre-made code is very easy, simply add the ```example JAR``` into your build-path or add the ```api``` package into your plugin.
 
 ###Pre-made Animations
-**Step One** is to create an instance of ParticleManager. This is the class that manages all active animations. This can be done using the following code.
+**Step One** is to create an instance of ParticleManager. This is the class that manages all active animations, which can be done using the following code.
 
 ``` java
 
@@ -75,7 +77,7 @@ public class Main extends JavaPlugin {
 
 ```
 
-However, say if you wanted the animation to follow a player as they move around. This is also possible with the following code.
+However, say if you wanted the animation to follow a player as they move around. This is also possible with the following code:
 
 ``` java
 
