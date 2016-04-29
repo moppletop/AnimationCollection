@@ -1,5 +1,5 @@
 # Animation Collection
-A simple particle animation collection for developers to build their own particles animations and learn from pre-made ones. Credit to DarkBlade12 for the ParticleEffect and ReflectionUtils classes.
+A simple particle animation collection for developers to build their own particles animations and learn from pre-made ones. Credit to [DarkBlade12](https://github.com/DarkBlade12) for the ParticleEffect and ReflectionUtils classes.
 
 ## Animations Plugin
 
@@ -105,7 +105,7 @@ Finally you may want to be aware of some other uses of the particle class:
 ### Custom Animations
 Now that you have a grasp on how to use pre-made animations, lets make some of our own.
 
-**Step One** is to create our class and setup the constructor. You can do this like so.
+**Step One** is to create our class and setup the constructor. You can do this like so:
 
 ``` java
 
@@ -126,7 +126,7 @@ public class ParticleExample extends Particle {
 
 > As a side note this is something which I cannot teach you in such a short time, I would recommend reading up on circle and co-ordinate geometry including radian measurements. If you are studying A-Level Mathematics (UK) you will learn about these topics and be able to apply it here. It is also a good idea to have a "play" around with the existing animations and see if you can make anything cool.
 
-The following code creates a circle with a radius of 4 of flame particles around a player. 
+The following code creates a circle with a radius of 4 of flame particles around a player:
 
 ``` java 
 
@@ -164,7 +164,7 @@ public class ParticleExample extends Particle {
 }
 
 ```
-Now lets allow users to type a command to use our animation.
+Now lets allow users to type a command to use our animation:
 
 ``` java
 
