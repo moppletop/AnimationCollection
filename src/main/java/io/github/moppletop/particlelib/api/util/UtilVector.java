@@ -5,31 +5,31 @@ import org.bukkit.util.Vector;
 
 public class UtilVector {
 
-	public static final Vector rotateAroundAxisX(Vector v, double angle) {
-		angle = -1 * Math.toRadians(angle);
+	public static final Vector rotateAroundAxisX(Vector v, double t) {
+		t = -1 * Math.toRadians(t);
 		double y, z, cos, sin;
-		cos = Math.cos(angle);
-		sin = Math.sin(angle);
+		cos = Math.cos(t);
+		sin = Math.sin(t);
 		y = v.getY() * cos - v.getZ() * sin;
 		z = v.getY() * sin + v.getZ() * cos;
 		return v.setY(y).setZ(z);
 	}
 
-	public static final Vector rotateAroundAxisY(Vector v, double angle) {
-		angle = -1 * Math.toRadians(angle);
+	public static final Vector rotateAroundAxisY(Vector v, double t) {
+		t = -1 * Math.toRadians(t);
 		double x, z, cos, sin;
-		cos = Math.cos(angle);
-		sin = Math.sin(angle);
+		cos = Math.cos(t);
+		sin = Math.sin(t);
 		x = v.getX() * cos + v.getZ() * sin;
 		z = v.getX() * -sin + v.getZ() * cos;
 		return v.setX(x).setZ(z);
 	}
 
-	public static final Vector rotateAroundAxisZ(Vector v, double angle) {
-		angle = -1 * Math.toRadians(angle);
+	public static final Vector rotateAroundAxisZ(Vector v, double t) {
+		t = -1 * Math.toRadians(t);
 		double x, y, cos, sin;
-		cos = Math.cos(angle);
-		sin = Math.sin(angle);
+		cos = Math.cos(t);
+		sin = Math.sin(t);
 		x = v.getX() * cos - v.getY() * sin;
 		y = v.getX() * sin + v.getY() * cos;
 		return v.setX(x).setY(y);

@@ -33,11 +33,14 @@ public class Main extends JavaPlugin {
 		if (sender instanceof Player) {
 			if (command.getName().equalsIgnoreCase("particlelib")) {
 				Player player = (Player) sender;
-				if (args.length == 1) {
+				if (args.length == 1 || args.length == 2) {
 					try {
+						int frequency = 1;
+						if (args.length == 2) {
+							frequency = Integer.parseInt(args[1]);
+						}
 						Class<?> clazz = Class.forName(packageName + ".Particle" + args[0]);
-						Particle particle = (Particle) clazz.getConstructor(ParticleManager.class, int.class).newInstance(particleManager, 1);
-						particle.setParticleStyleType(ParticleStyleType.PLAYER_ORIENTATED);
+						Particle particle = (Particle) clazz.getConstructor(ParticleManager.class, int.class).newInstance(particleManager, frequency);
 						if (particle.getParticleStyleType() == ParticleStyleType.PLAYER_ORIENTATED) {
 							particle.setTarget(player);
 						} else {
@@ -49,7 +52,7 @@ public class Main extends JavaPlugin {
 						return true;
 					}
 				} else {
-					player.sendMessage(ChatColor.RED + "Usage: /particlelib <name>");
+					player.sendMessage(ChatColor.RED + "Usage: /particlelib <name> [frequency]");
 					return true;
 				}
 			}

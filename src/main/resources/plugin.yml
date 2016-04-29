@@ -1,0 +1,7 @@
+name: ParticleLib
+version: 1
+main: io.github.moppletop.particlelib.plugin.Main
+author: Sam
+commands:
+  particlelib:
+    description: The ParticleLib Command

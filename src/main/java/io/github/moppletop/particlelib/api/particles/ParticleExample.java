@@ -2,15 +2,16 @@ package io.github.moppletop.particlelib.api.particles;
 
 import io.github.moppletop.particlelib.api.Particle;
 import io.github.moppletop.particlelib.api.ParticleManager;
+import io.github.moppletop.particlelib.api.ParticleStyleType;
 import io.github.moppletop.particlelib.api.util.ParticleEffect;
 
 public class ParticleExample extends Particle {
 
-	private final double r = 4; // The radius remains constant so it can be a
-								// private final variable.
+	private final double r = 4; // The radius remains constant so it can be a private final variable.
 
 	public ParticleExample(ParticleManager particleManager, int frequency) {
 		super(particleManager, frequency);
+		this.setParticleStyleType(ParticleStyleType.PLAYER_ORIENTATED);
 	}
 
 	@Override
