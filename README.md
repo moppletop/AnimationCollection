@@ -17,12 +17,12 @@ If you would like to see these particles in a live environment you can download 
 
 ```
 
-/particle <name>
+/particlelib <name>
 
 Name being the class name without "Particle" infront of it.
 For example for the Blood Helix animation you would use
 
-/particle Helix
+/particlelib Helix
 
 ```
 
