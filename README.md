@@ -89,7 +89,7 @@ However, say if you wanted the animation to follow a player as they move around.
 	//This sets the number of iterations the onUpdate method will run.
 	//We multiply the number of seconds (10) by the number of iterations the animation makes every second (20).
 	
-	particleHelix.setParticleStyleType(ParticleStyleTypePLAYER_ORIENTATED); 
+	particleHelix.setParticleStyleType(ParticleStyleType.PLAYER_ORIENTATED); 
 	
 	particleHelix.setTarget(player); //You can either pass in a Player or an UUID.
 	
