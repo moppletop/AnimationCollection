@@ -18,7 +18,7 @@ ParticleLib contains over 10 different pre-made particle animations that you are
 | Water Dragon | ParticleWaterDragon     | 1                 | PLAYER_ORIENTATED         |![alttext](https://github.com/moppletop/AnimationCollection/blob/master/images/waterdragon.png "Water Dragon")        |
 
 ### Command usage
-If you would like to see these particles in a live environment you can download a compiled version of this library [here](https://github.com/moppletop/AnimationCollection/blob/master/AnimationCollection.jar "Download pre-made jar"). Just use this command.
+If you would like to see these particles in a live environment you can download a compiled version of this library [here](https://github.com/moppletop/AnimationCollection/blob/master/AnimatedCollection.jar?raw=true "Download pre-made jar"). Just use this command.
 
 ```
 
